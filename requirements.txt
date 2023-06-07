@@ -1,0 +1,17 @@
+ray[default]
+filelock==3.0.12
+hyperopt==0.2.5
+numpy==1.20.3
+arm-mango
+Gpy==1.10.0
+tzlocal
+rpy2==3.4.5
+matplotlib
+yacs==0.1.8
+jupyter
+keras==2.4.3
+fuzzy-c-means==0.0.6
+scikit-learn==0.24.2
+ray==1.5.0
+ray[tune]
+Orange3==3.29.3

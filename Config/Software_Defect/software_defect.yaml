@@ -1,0 +1,41 @@
+SYSTEM:
+  NUM_GPUS: 2
+TRAIN:
+  TYPE: "Global"   #model type Global or Transfer
+  N_REPEATS: 50  #number of times to run this model for prediction to make sure we are not just doing ramdom prediction
+  VALIDATION_SPLIT: 0.3  #percentage of data to use for validation when building the model
+DATA:
+  PREPROCESSING: "all"  # the various preprocessing   random obver, random under , smot
+  INPUT: "all"
+  GLOBAL_CSV: [ '/mnt/c/Projects/ResearchProjects/TSE-WBDA-PLUS/Data/AEEEM/LC.arff',
+                '/mnt/c/Projects/ResearchProjects/TSE-WBDA-PLUS/Data/AEEEM/JDT.arff',
+                '/mnt/c/Projects/ResearchProjects/TSE-WBDA-PLUS/Data/AEEEM/ML.arff',
+                '/mnt/c/Projects/ResearchProjects/TSE-WBDA-PLUS/Data/AEEEM/PDE.arff'
+  ]
+  TARGET_CSV: ["/mnt/c/Projects/ResearchProjects/TSE-WBDA-PLUS/Data/AEEEM/EQ.arff"]
+BAYESIAN_TUNING:
+  MAX_NUM_TRIALS: 15  #maximum number of trials to run for.\
+  MAX_NUM_CONCURRENT_TRIAL: 5 #The number of concurrent trials. This generates a batch of max_concurrent trials from GPyOpt to evaluate
+  INIT_POINT: 1 #The number ofinitial data points
+  N_ITER: 10 #The total number of iterations
+  VERBOSE: 1  #for print out set to 1 else set to 0
+  BATCH_SIZE: 1 #The size of args_list passed to the objective function for parallel evaluation. For larger batch sizes, Mango internally uses intelligent sampling to decide the optimal samples to evaluate.
+  DOMAIN_SIZE: 2 #The size which is explored in each iteration by the gaussian process should be less the data point
+  N_CORES: 2 #number of cores to use to do hyperparamter using  bayesian optimisation. Please enable multi processing if running on linux
+GENERAL:
+  DIRECTORY: "AEEM_EQ" # Directory path to store information
+  DOMAIN: softwaredefect  #domain type  softwaredefect soil or nlp
+  READCSV: False
+  READRDS: True
+  GLOBAL_MODEL_DIRECTORY: ""
+  ROOT_DIR: ""
+  USING_EXISTING_DATA_SPLIT: False
+  SEED: 40
+  LOGS: "/logs/"
+
+
+
+
+
+
+
