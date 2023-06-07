@@ -200,8 +200,9 @@ def tune_algorithm(x_source, y_source, target_x, target_y, cfg, domain_adapation
 
     dim = lamb = gamma = n_neighbors = mu = kernel_type = MinHam= KNNneighbors=None
 
-    mu = 1  # In WBDA, the recommended  setting for mu is 1
 
+
+    mu = tune.uniform(0.0, 1.0) # # In WBDA, the recommended  setting for mu is 1, lets try grid search
     # set configuration for domain adaptation
     kernel_type = tune.choice(['primal', 'linear', 'rbf'])
     if domain_adapation == "TCA" or domain_adapation == "JDA":

@@ -1,4 +1,4 @@
-"adapted functions from Understanding the automated parameter optimization on transfer learning for cross-project defect prediction: an empirical study"
+
 import ray
 import re, time
 import numpy as np

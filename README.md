@@ -26,6 +26,6 @@ Cd to the default config file and update the Config/Software_Defect/software_def
 Please see the bash script on how to run the files
 
 
-The dataset used for the ICSE paper is located in Data/AEEEM
+The dataset used for the Applied Intelligence Journal paper is located in Data/AEEEM
 
 python run.py -type train -config-file /path_to_confi_file/software_defect.yaml 
